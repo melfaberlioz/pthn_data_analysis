@@ -104,4 +104,4 @@ If data is a scalar value, an index must be provided.
 The value will be repeated to match the length of index.
 """
 s = pd.Series(5, index=[1, 2, 3])
-print s
+print(s)
