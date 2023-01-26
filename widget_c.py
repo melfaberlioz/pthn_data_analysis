@@ -11,22 +11,27 @@ accounting = pd.concat([service1, service2, service3], axis=0)
 accounting.reset_index(drop=True)
 # додаємо два файла та групуємо їх в єдину таблицю
 
+# читати файл csv
 fuel = pd.read_csv('price.csv')
+# об'єднання змінних fuel and accounting
 accounting = pd.merge(accounting, fuel)
+# read csv file
 gas_station = pd.read_csv('filling1.csv')
+# merge accounting and gas_station
 accounting = pd.merge(accounting, gas_station)
-accounting
+print(accounting)
 # додаємо ще 2 файла з даними і маємо фінальну таблицю
+
 
 accounting['bonus_95'] = accounting[accounting['Patrol']=='PULLS_95']['Quantity']*1
 accounting['bonus_Disel'] = accounting[accounting['Patrol']=='PULLS_Disel']['Quantity']*1
 accounting['income'] = accounting['Quantity']*accounting['Price']
 accounting = accounting.fillna(0)
-accounting
+print(accounting)
 #  вираховуємо бонуси та дохід
 
 income_bar = accounting.groupby('Idnumber')['income'].sum()
-income_bar
+print(income_bar)
 # групуємо та маємо результат для кожної заправки
 
 income_bar.plot.bar(color='g')

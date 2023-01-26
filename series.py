@@ -8,17 +8,34 @@ readable and relevant.
 
 Pandas as pd
 Pandas is usually imported under the pd alias.
-# import pandas as pd
+# import pandas as pd.
+Series is a type of list in pandas which can take
+integer values, string values, double values and more.
+But in Pandas Series we return an object in the form of
+list, having index starting from 0 to n, where n in the length
+of value in series.
 """
 
 """SERIES
 is one-dimensional array-like object containing
 an array of data and an associated array of data
 labels (indexes).
+Series can only contain single list with index. 
 """
+
+# creating a simple Series:
 
 import pandas as pd
 
+# creating a list
+author = ['Jitender', 'Purnima', 'Arpit', 'Jyoti']
+
+# creating a Series by passing list to Series() function
+auth_series = pd.Series(author)
+# printing series
+print(auth_series)
+
+print(' \n ')
 import numpy as np
 
 data = np.array(['g', 'e', 'e', 'k', 's'])
