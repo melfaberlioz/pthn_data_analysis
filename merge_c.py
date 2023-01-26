@@ -20,4 +20,4 @@ print(' \n ')
 """
 Merge Two DataFrames on a Key
 """
-print(pd.merge(left, right, on='id', 'subject_is'))
+print(pd.merge(left, right, on='id', 'subject_id'))
